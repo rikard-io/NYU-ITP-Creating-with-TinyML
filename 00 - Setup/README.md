@@ -17,7 +17,7 @@
 ## Test it out
 1. Plugin your Nano 33 BLE Sense board into your computer.
 1. Go to `Tools -> Board -> Arduino Mbed OS Nano Boards -> Arduino Nano 33 BLE`
-1. Go to `Tools -> Port` and select the port with "Arduino Nano 33 BLE" in it's name. On MacOS it shows up as `/dev/cu.usbmodem14012 (Arduino Nano 33 BLE)` for me. 
+1. Go to `Tools -> Port` and select the port with "Arduino Nano 33 BLE" in its name. On MacOS it shows up as `/dev/cu.usbmodem14012 (Arduino Nano 33 BLE)` for me. 
     * If you're having problem seeing what port to select, try unplugging the board, look at the Port list, then plug the board back in to see what port shows up
 1. Open 00_HelloWorld/00_HelloWorld.ino in this folder
 1. Click the right pointing arrow in the upper left corner to build and upload the sketch.
