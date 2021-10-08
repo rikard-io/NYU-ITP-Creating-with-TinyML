@@ -11,7 +11,7 @@ Start by installing TensorFlow Lite For Microcontrollers
 1. Search for TensorFlow and install Arduino_TensorFlowLite published by Pete Warden.
 1. Wait for the installation to complete
 
-## Run the example
+## Run 'Hello World' example
 To make sure everything is working, let's run the pre-build model.
 1. Plugin your Arduino Nano 33 BLE Sense
 1. Select the right port under `Tools->Port...`
