@@ -83,7 +83,7 @@ void portSelect(int n) {
   String selectedPortName = (String) cp5.get(ScrollableList.class, "portSelect").getItem(n).get("text");
 
   try {
-    myPort = new Serial(this, selectedPortName, 115200);
+    myPort = new Serial(this, selectedPortName, 9600);
     myPort.buffer(bytesPerFrame);
   } 
   catch (Exception e) {

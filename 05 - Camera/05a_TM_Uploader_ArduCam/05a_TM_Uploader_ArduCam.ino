@@ -38,7 +38,7 @@ void setup() {
     digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
     delay(400);                       // wait for a second
   
-  Serial.begin(115200);
+  Serial.begin(9600);
   while (!Serial);
 
       
