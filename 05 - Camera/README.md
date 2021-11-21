@@ -60,3 +60,6 @@ For this experiment we're going to use the Arducam Mini 2MP Plus to capture and 
 1. Click `Device` under the class you want to try. You should get a feed from your Arduino - If not, go back to processing and make sure it's still running and getting a feed.
 1. Train a model.
 1. Download and run on the Arduino
+1. **IMPORTANT** Replace the file "arduino_image_provider.cpp" after unzipping the zip file downloaded from Teachable Machine with the one provided in this folder\*.<br/><br/>\* *Teachable Machine looks for a different camera by default, this is easily corrected by replacing the image provider with one working with our camera. Code for the replacement image provider comes from the Tensorflow Lite for Microcontrollers example 'person_detection'.*
+
+
