@@ -63,3 +63,8 @@ For this experiment we're going to use the Arducam Mini 2MP Plus to capture and 
 1. **IMPORTANT** Replace the file "arduino_image_provider.cpp" after unzipping the zip file downloaded from Teachable Machine with the one provided in this folder\*.<br/><br/>\* *Teachable Machine looks for a different camera by default, this is easily corrected by replacing the image provider with one working with our camera. Code for the replacement image provider comes from the Tensorflow Lite for Microcontrollers example 'person_detection'.*
 
 
+## Train a model using EdgeImpulse
+1. Train and download your model with [EdgeImpulse](https://www.edgeimpulse.com/) 
+1. Export model as a Arduino Library
+1. Import model / code zip file in the Arduino IDE
+1. **Important** use the EdgeImpulse_Inference.ino code in this folder which is adapted to work with the ArduCam 2MP+ camera. Just replace the second line in the file to import your project data
