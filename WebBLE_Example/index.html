@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebBluetooth Counter Example</title>
+  </head>
+  <body>
+    <button id="button">Connect</button>
+    <div>Counter Value: <span id="log">0</span></div>
+    <script>
+      function handleCounterChanged(event) {
+        const counterValue = event.target.value.getUint8(0);
+        log.innerText = counterValue;
+      }
+
+      let ble = {};
+
+      button.addEventListener("pointerup", function (event) {
+        navigator.bluetooth
+          .requestDevice({
+            filters: [{ services: ["00001234-0000-1000-8000-000000000001"] }],
+          })
+          .then((device) => {
+            ble.device = device;
+            return device.gatt.connect();
+          })
+          .then((server) => {
+            ble.server = server;
+            // Getting Battery Service…
+            return server.getPrimaryService(
+              "00001234-0000-1000-8000-000000000001"
+            );
+          })
+          .then((service) => {
+            ble.service = service;
+
+            // Get the characteristic…
+            return service.getCharacteristic(
+              "00001234-0000-1000-8000-000000000002"
+            );
+          })
+          .then((characteristic) => {
+            ble.characteristic = characteristic;
+            // Subscribe
+            ble.characteristic.addEventListener(
+              "characteristicvaluechanged",
+              handleCounterChanged
+            );
+            return ble.characteristic.startNotifications()
+          }).then(_=>{
+              console.log("BLE Notifications started")
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
+    </script>
+  </body>
+</html>
